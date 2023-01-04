@@ -3,7 +3,7 @@ package routes
 import (
 	"server/handlers"
 	"server/pkg/middleware"
-	"server/pkg/mysql"
+	"server/pkg/sql"
 	"server/repositories"
 
 	"github.com/gorilla/mux"
@@ -11,7 +11,7 @@ import (
 
 func TransactionRoutes(r *mux.Router) {
 	// GET TRANSACTION REPOSITORY HANDLER
-	transactionRepository := repositories.RepositoryTransaction(mysql.DB)
+	transactionRepository := repositories.RepositoryTransaction(sql.DB)
 	h := handlers.HandlerTransaction(transactionRepository)
 
 	// DEFINE ROUTES

@@ -3,7 +3,7 @@ package routes
 import (
 	"server/handlers"
 	"server/pkg/middleware"
-	"server/pkg/mysql"
+	"server/pkg/sql"
 	"server/repositories"
 
 	"github.com/gorilla/mux"
@@ -11,7 +11,7 @@ import (
 
 func CartRoutes(r *mux.Router) {
 	// GET CART REPOSITORY HANDLER
-	CartRepository := repositories.RepositoryCart(mysql.DB)
+	CartRepository := repositories.RepositoryCart(sql.DB)
 	h := handlers.HandlerCart(CartRepository)
 
 	// DEFINE ROUTES

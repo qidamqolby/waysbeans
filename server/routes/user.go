@@ -3,7 +3,7 @@ package routes
 import (
 	"server/handlers"
 	"server/pkg/middleware"
-	"server/pkg/mysql"
+	"server/pkg/sql"
 	"server/repositories"
 
 	"github.com/gorilla/mux"
@@ -11,7 +11,7 @@ import (
 
 func UserRoutes(r *mux.Router) {
 	// GET USER REPOSITORY HANDLER
-	userRepository := repositories.RepositoryUser(mysql.DB)
+	userRepository := repositories.RepositoryUser(sql.DB)
 	h := handlers.HandlerUser(userRepository)
 
 	//DEFINE ROUTES
