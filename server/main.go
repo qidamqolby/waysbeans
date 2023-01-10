@@ -15,6 +15,7 @@ import (
 func main() {
 
 	// // GET ENVIRONMENT VARIABLES
+	// // DISABLED FOR RUNNING ON RAILWAY
 	// errEnv := godotenv.Load()
 	// if errEnv != nil {
 	// 	panic("Failed to load env file")
