@@ -75,7 +75,6 @@ export default function AdminProduct({
       formData.append("price", parseInt(form.price));
       formData.append("image", form?.image[0] || "");
       formData.append("description", form.description);
-      console.log(...formData);
       // get response from product
       const response = await API.post("/product", formData, config);
       // set popup when response success
